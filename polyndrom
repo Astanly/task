@@ -81,6 +81,35 @@ polindrome_str(10,9999)
 
 
  
+## List
+def polindrome_list(stop,start):
+   L=list(str(start**2-1))
+   plist=[]
+   simmetry=mirrow_list(L)
+   stop_value=stop**2
+   polindrom=stop_value+1
+   change={True,False}
+   if simmetry:
+      base_l=L[0:int(len(L)/2)+1]  
+   else: 
+      base_l=L[0:int(len(L)/2)]  
 
+   #можно пергнать в таблицу интов но лень и не успвеаю, хотя  тогда не удобно в строку потом перегонять
+   counter=int(base_l[-1])
+   cutter=1
+   while polindrom>stop_value: 
+        if int(base_l[-cutter-simmetry])==0:
+              if simmetry== True:
+                 base_l== base_l[-2::]     
+                 simmetry== False 
+              else:
+                 simmetry=True 
+         
+
+        for si in range(10):        
+            base_l[-cutter]= str(9-si)
+            polindrom= value_fromlist1(generateP_list(base_l,simmetry) )
+            plist.append( polindrom)    
+          
 
 
